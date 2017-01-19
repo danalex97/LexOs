@@ -1,0 +1,6 @@
+barebones-toolchain
+*.o
+*.iso
+*~
+*.bin
+isodir
