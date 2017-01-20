@@ -10,6 +10,7 @@ OBJECTS_AS += boot.o
 OBJECTS_GCC += kernel.o
 OBJECTS_GCC += lib.o
 OBJECTS_GCC += vga.o
+OBJECTS_GCC += gdt.o
 
 all: $(EXE)
 

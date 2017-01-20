@@ -3,7 +3,8 @@
 #include <stdint.h>
 
 #include "vga.h"
- 
+#include "gdt.h"
+
 #if defined(__linux__)
 	#error "Check for cross compiler"
 #endif
@@ -15,7 +16,11 @@
 void kernel_main(void) {
 	/* Initialize terminal interface */
 	terminal_initialize();
- 
+ 	
+ 	/* Register the global descriptor table and indicate its location.*/
+	register_all_gdt_entries();
+
 	/* Newline support is left as an exercise. */
 	terminal_writestring("Hello, kernel World!\n");
+
 }
