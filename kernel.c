@@ -17,8 +17,11 @@ void kernel_main(void) {
 	/* Initialize terminal interface */
 	terminal_initialize();
  	
- 	/* Register the global descriptor table and indicate its location.*/
-	register_all_gdt_entries();
+ 	/* Register the global descriptor table and indicate its location. */
+	gdt_install();
+
+	/* Register interrupt table for interrupt setup. Implement using the PintOS methods. */
+	// interrupt_install();
 
 	/* Newline support is left as an exercise. */
 	terminal_writestring("Hello, kernel World!\n");

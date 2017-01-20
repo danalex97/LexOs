@@ -6,6 +6,7 @@ LDSCRIPT := linker.ld
 LD := i686-elf-gcc -T $(LDSCRIPT) -ffreestanding -O2 -nostdlib 
 
 OBJECTS_AS += boot.o
+OBJECTS_AS += gdt_start.o
 
 OBJECTS_GCC += kernel.o
 OBJECTS_GCC += lib.o
